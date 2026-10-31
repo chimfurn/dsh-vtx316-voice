@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "VTX316 Voice",
+    "description": "Speak text aloud through a 宇音天下 VTX316 voice module connected over serial. Adds a vtx316_speak tool that converts text to GBK, sends VTX316 synthesis frames and reports the module feedback."
+  }
+}

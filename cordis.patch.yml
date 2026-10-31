@@ -1,0 +1,19 @@
+# vtx316-voice —— DSH bundle patch
+#
+# Inserts the vtx316-voice host plugin. The row config is the serial device the
+# 宇音天下 VTX316 module is wired to; adjust `port` if Windows assigns another
+# COM number. `baud` must match the module's BAUD0/BAUD1 strap (115200 when both
+# are left floating).
+#
+# defaultVolume/defaultSpeed/defaultTone are the speech parameters captured from
+# the module with `FD 00 01 05` (0x5F reply: speed=23, volume=1, tone=9). They are
+# applied to every utterance unless the caller overrides volume/speed/tone.
+- insert:
+    - id: vtx316-voice
+      name: '@local/dsh-vtx316-voice'
+      config:
+        port: COM6
+        baud: 115200
+        defaultVolume: 1
+        defaultSpeed: 23
+        defaultTone: 9
